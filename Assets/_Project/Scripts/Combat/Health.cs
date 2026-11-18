@@ -33,6 +33,9 @@ public class Health : MonoBehaviour
         Current = Mathf.Max(0f, Current - amount);
         HealthChanged?.Invoke(Current, maxHealth);
 
+        Debug.Log($"{gameObject.name} took {amount} damage, current health: {Current}/{maxHealth}");
+
+
         if (Current <= 0f)
         {
             Die();
